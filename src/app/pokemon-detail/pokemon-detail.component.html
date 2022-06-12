@@ -1,1 +1,7 @@
-<p>pokemon-detail works!</p>
+<div *ngIf="loading">Loading</div>
+<div *ngIf="error">Error : {{ error }}</div>
+
+<div *ngIf="pokemon">
+  <h2>{{ pokemon.name }}</h2>
+  <img [src]="pokemon.image" />
+</div>

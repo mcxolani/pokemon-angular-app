@@ -1,1 +1,9 @@
-<p>pokemon works!</p>
+<div *ngIf="loading">Loading</div>
+<div *ngIf="error">Error : {{ error }}</div>
+
+<div class="pokemon-list">
+  <div class="pokemon-list__item" *ngFor="let p of pokemon">
+    <img [src]="p.image" />
+    <h2>{{ p.name }}</h2>
+  </div>
+</div>
