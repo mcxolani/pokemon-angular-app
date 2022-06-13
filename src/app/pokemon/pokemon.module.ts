@@ -3,14 +3,16 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonComponent } from './pokemon.component';
 import { PokemonService } from './pokemon.service';
+import { SearchFilterPipeModule } from '../pipes/search-filter.pipe.module';
 
 @NgModule({
   declarations: [
-    PokemonComponent
+    PokemonComponent,
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    SearchFilterPipeModule
   ],
   providers: [
     PokemonService

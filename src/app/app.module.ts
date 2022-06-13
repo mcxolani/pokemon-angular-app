@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonDetailModule } from './pokemon-detail/pokemon-detail.module';
 import { PokemonModule } from './pokemon/pokemon.module';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [

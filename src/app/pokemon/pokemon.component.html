@@ -1,6 +1,8 @@
-<div *ngIf="loading">Loading</div>
-<div *ngIf="error">Error : {{ error }}</div>
-
+<div class="pokemon-list">
+  <div *ngIf="loading">Loading</div>
+  <div *ngIf="error">Error : {{ error }}</div>
+  <input type="text" placeholder="search" />
+</div>
 <div class="pokemon-list">
   <div class="pokemon-list__item" *ngFor="let p of pokemon">
     <img [src]="p.image" />
