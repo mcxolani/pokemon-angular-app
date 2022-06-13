@@ -1,10 +1,14 @@
 <div class="pokemon-list">
   <div *ngIf="loading">Loading</div>
   <div *ngIf="error">Error : {{ error }}</div>
-  <input type="text" placeholder="search" />
+  <input type="text" placeholder="search" [(ngModel)]="search" />
 </div>
 <div class="pokemon-list">
-  <div class="pokemon-list__item" *ngFor="let p of pokemon">
+  <div
+    class="pokemon-list__item"
+    *ngFor="let p of pokemon | searchFilter: search"
+    routerLink="/pokemon/{{ p.name }}"
+  >
     <img [src]="p.image" />
     <h2>{{ p.name }}</h2>
   </div>

@@ -8,6 +8,7 @@ import { PokemonService } from './pokemon.service';
 	styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
+	search: string = '';
 	error: string = '';
 	loading: boolean = true;
 	pokemon: Pokemon[] = [];

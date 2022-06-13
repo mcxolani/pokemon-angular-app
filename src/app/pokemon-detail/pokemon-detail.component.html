@@ -4,4 +4,11 @@
 <div *ngIf="pokemon">
   <h2>{{ pokemon.name }}</h2>
   <img [src]="pokemon.image" />
+
+  <div>
+    Stats:
+    <ul *ngFor="let state of pokemon.stats">
+      <li>{{ state.stat.name }}: {{ state.base_stat }}</li>
+    </ul>
+  </div>
 </div>

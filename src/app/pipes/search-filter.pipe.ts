@@ -6,8 +6,14 @@ import { Pokemon } from '../pokemon/pokemon';
 })
 export class SearchFilterPipe implements PipeTransform {
 
-  transform(value: Pokemon[], search = ''): unknown {
-    return null;
+  transform(value: Pokemon[], search = ''): Pokemon[] {
+    if (!search.trim()) {
+      return value;
+    }
+
+    return value.filter(pokemon => {
+      return pokemon.name.toLowerCase().includes(search.toLowerCase());
+    });
   }
 
 }
