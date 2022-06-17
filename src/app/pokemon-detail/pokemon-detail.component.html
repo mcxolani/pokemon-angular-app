@@ -1,14 +1,18 @@
-<div *ngIf="loading">Loading</div>
-<div *ngIf="error">Error : {{ error }}</div>
+<div *ngIf="loading || error" class="pokemon-detail margin-top">
+  <div *ngIf="loading">Loading</div>
+  <div *ngIf="error">Error : {{ error }}</div>
+</div>
 
-<div *ngIf="pokemon">
+<div *ngIf="pokemon" class="pokemon-detail">
   <h2>{{ pokemon.name }}</h2>
   <img [src]="pokemon.image" />
 
-  <div>
-    Stats:
-    <ul *ngFor="let state of pokemon.stats">
-      <li>{{ state.stat.name }}: {{ state.base_stat }}</li>
+  <div class="pokemon-stat">
+    <h3>Stats:</h3>
+    <ul>
+      <li *ngFor="let state of pokemon.stats">
+        {{ state.stat.name }}: {{ state.base_stat }}
+      </li>
     </ul>
   </div>
 </div>
