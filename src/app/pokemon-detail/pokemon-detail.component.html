@@ -4,15 +4,17 @@
 </div>
 
 <div *ngIf="pokemon" class="pokemon-detail">
-  <h2>{{ pokemon.name }}</h2>
-  <img [src]="pokemon.image" />
-
-  <div class="pokemon-stat">
-    <h3>Stats:</h3>
-    <ul>
-      <li *ngFor="let state of pokemon.stats">
-        {{ state.stat.name }}: {{ state.base_stat }}
-      </li>
-    </ul>
+  <h1>{{ pokemon.name }}</h1>
+  <div class="img-stat">
+    <img [src]="pokemon.image" />
+    <div class="">
+      <h2>Stats:</h2>
+      <ul>
+        <li *ngFor="let state of pokemon.stats">
+          <em>{{ state.stat.name }}</em> :
+          <span>{{ state.base_stat }}</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
