@@ -32,4 +32,13 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h4')?.textContent).toContain('Pokemon App for Standard Bank');
   });
+
+  it('should have a home link', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('a')?.textContent).toContain('Home');
+    const homeLink = window.location.origin + "/";
+    expect(compiled.querySelector('a')?.href).toBe(homeLink);
+  });
 });
